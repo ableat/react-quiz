@@ -10,25 +10,34 @@ import Quiz from './Quiz'
 class QuizContainer extends React.Component {
   state = {
     currentQuestionIndex: 0,
-    answers: {}
+    answers: {},
+    responseView: false,
+    selectedanswer: 0
   }
 
   onAnswer = (selectedAnswer) => {
+    console.log('selected answer ' + selectedAnswer )
     this.setState({
       ...this.state,
       answers: {
         ...this.state.answers,
         [this.state.currentQuestionIndex]: selectedAnswer
-      }})
+      },
+      responseView:  true,
+      selectedanswer: selectedAnswer
+    })
   }
 
   onNext = () => this.setState({
-    currentQuestionIndex: this.state.currentQuestionIndex + 1
+    currentQuestionIndex: this.state.currentQuestionIndex + 1,
+    responseView:  false
   })
 
   render () {
     return <Quiz {...this.props}
                  currentQuestionIndex={this.state.currentQuestionIndex}
+                 responseView ={this.state.responseView}
+                 selectedanswer = {this.state.selectedanswer}
                  answers={this.state.answers}
                  onAnswer={this.onAnswer}
                  onNext={this.onNext} />

@@ -7,8 +7,9 @@ import questions from './questions'
 // (Alternatively you can select on these selectors in your CSS to add styling.)
 const customClassNames = {
   'rq-Quiz-buttonContainer': '',
+  'rq-Quiz-progressText': 'progressTextClassName',
   'rq-Question-instruction': 'instruction',
-  'rq-Question-text': '',
+  'rq-Question-text': 'question-box',
   'rq-Question-answerList': 'answer-list',
   'rq-Answer': 'answer',
   'rq-Answer-button': 'btn bc-btn-gray-cool btn-lg bc-btn-square bc-btn-block answer-button',
@@ -20,11 +21,8 @@ const customClassNames = {
 
 // You can override text in a similar way, e.g. if you want to translate the
 // component to different languages.
-const customText = {
-  // 'rq-Quiz-progressText': 'Question {n} of {total}',
-  // 'rq-Quiz-nextButton': 'Onwards',
-  // 'rq-Quiz-nextButton--finish': 'Enough of this I say!'
-}
+const customText = 
+   'Welcome to, The Able '
 
 export default class App extends Component {
   render () {

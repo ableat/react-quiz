@@ -1,5 +1,25 @@
 /* Component styling */
 
+body {
+	background: black;
+	font-family: 'Roboto Slab', serif;
+}
+
+
+.question-box {
+  background: #1d328e;
+  border-color : gray;
+  border-width: 3px;
+  border-style: solid;
+  color : white;
+  text-align: center;
+  width: 960px;
+  margin-top: 50%;
+	margin: 0 auto;
+	padding: 10px;
+	font-size: 1.5em;
+}
+
 .active {
   background-color: #333;
 }
@@ -22,10 +42,18 @@
   font-weight: 600;
 }
 
+.instruction {
+  height:        15px;
+  border-radius: 10px;
+  color: white;
+}
+.progressTextClassName,
 .progress,
 .progress-bar {
   height:        15px;
   border-radius: 10px;
+  color: white;
+  font-size: 1.5em;
 }
 
 .progress-bar {

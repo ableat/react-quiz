@@ -4,8 +4,8 @@ import ProgressBar from './ProgressBar'
 import classNames from 'classnames'
 import interpolate from 'interpolate'
 
-const Quiz = ({ questions, answers, currentQuestionIndex, onAnswer, onNext,
-  onFinish, customClassNames = {}, customText = {}}) => {
+const Quiz = ({ questions, answers, responseView, selectedanswer, currentQuestionIndex, onAnswer, onNext, 
+  onFinish, customClassNames = {}, customText = ''}) => {
   const isLastQuestion = (currentQuestionIndex + 1) === questions.length
 
   const progressTextClassName = classNames('rq-Quiz-progressText', customClassNames['rq-Quiz-progressText'])
@@ -20,8 +20,11 @@ const Quiz = ({ questions, answers, currentQuestionIndex, onAnswer, onNext,
   })
 
   return (
+
+
+
     <div>
-      <p className={progressTextClassName}>{progressText}</p>
+      <p className={progressTextClassName}>'{progressText}'</p>
       <ProgressBar value={currentQuestionIndex + 1}
                    max={questions.length}
                    customClassNames={customClassNames} />
@@ -29,6 +32,18 @@ const Quiz = ({ questions, answers, currentQuestionIndex, onAnswer, onNext,
                 onAnswer={onAnswer}
                 selectedAnswer={answers[currentQuestionIndex]}
                 {...questions[currentQuestionIndex]} />
+
+
+
+        {responseView 
+            ? <p className={progressTextClassName}>{questions[currentQuestionIndex].response[selectedanswer]}</p>
+
+            :
+            null
+        }
+
+
+
       <div className={buttonContainerClassName}>
         {isLastQuestion
           ? <button className={nextButtonClassName}
@@ -46,6 +61,9 @@ const Quiz = ({ questions, answers, currentQuestionIndex, onAnswer, onNext,
 Quiz.propTypes = {
   questions: React.PropTypes.array.isRequired,
   answers: React.PropTypes.object.isRequired,
+  responseView: React.PropTypes.boolean,
+  selectedanswer: React.PropTypes.number,
+  customText: React.PropTypes.string,
   currentQuestionIndex: React.PropTypes.number.isRequired,
   onAnswer: React.PropTypes.func.isRequired,
   onNext: React.PropTypes.func.isRequired,
