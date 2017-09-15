@@ -20,6 +20,43 @@ body {
 	font-size: 1.5em;
 }
 
+.custom-info {
+  background: #0DA4E6;
+  border-color : yellow;
+  border-width: 3px;
+  border-style: solid;
+  color : black;
+  width: 600px;
+  margin-top: 50%;
+	margin: 0 auto;
+	padding: 10px;
+	font-size: 1.5em;
+}
+
+.custom-text-left {
+  background: #0DA4E6;
+  color : black;
+  text-align: left;
+	padding: 10px;
+	font-size: 1.5em;
+}
+
+.custom-text-center {
+  background: #0DA4E6;
+  color : black;
+  text-align: center;
+	padding: 10px;
+	font-size: 1.5em;
+}
+
+.custom-text-right {
+  background: #0DA4E6;
+  color : black;
+  text-align: right;
+	padding: 10px;
+	font-size: 1.5em;
+}
+
 .active {
   background-color: #333;
 }

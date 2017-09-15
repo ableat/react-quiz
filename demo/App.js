@@ -21,15 +21,14 @@ const customClassNames = {
 
 // You can override text in a similar way, e.g. if you want to translate the
 // component to different languages.
-const customText = 
-   'Welcome to, The Able '
+//const customText = [Welcome to
+//      The Able Knowledge Game]
 
 export default class App extends Component {
   render () {
     return (
       <div className="App">
         <QuizContainer customClassNames={customClassNames}
-                       customText={customText}
                        questions={questions}
                        onFinish={(answers) => console.log(answers)} />
       </div>

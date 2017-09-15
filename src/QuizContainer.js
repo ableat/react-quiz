@@ -1,5 +1,6 @@
 import React from 'react'
 import Quiz from './Quiz'
+import Greeting from './Greeting'
 
 /*
   Connects Quiz to state.
@@ -34,13 +35,18 @@ class QuizContainer extends React.Component {
   })
 
   render () {
-    return <Quiz {...this.props}
+/*    return <Quiz {...this.props}
                  currentQuestionIndex={this.state.currentQuestionIndex}
                  responseView ={this.state.responseView}
                  selectedanswer = {this.state.selectedanswer}
                  answers={this.state.answers}
                  onAnswer={this.onAnswer}
-                 onNext={this.onNext} />
+                 onNext={this.onNext} />  */
+
+    return <Greeting 
+
+      customText = {this.props.customText}
+ />
   }
 }
 
