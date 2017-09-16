@@ -13,6 +13,7 @@ class QuizContainer extends React.Component {
     currentQuestionIndex: 0,
     answers: {},
     responseView: false,
+    startQuizSW: false,
     selectedanswer: 0
   }
 
@@ -34,18 +35,26 @@ class QuizContainer extends React.Component {
     responseView:  false
   })
 
+  startQuiz = () => this.setState({
+    currentQuestionIndex: 0,
+    responseView:  false,
+    startQuizSW: true
+  })
+
   render () {
-/*    return <Quiz {...this.props}
+   
+/*<Quiz {...this.props}
                  currentQuestionIndex={this.state.currentQuestionIndex}
                  responseView ={this.state.responseView}
                  selectedanswer = {this.state.selectedanswer}
                  answers={this.state.answers}
                  onAnswer={this.onAnswer}
                  onNext={this.onNext} />  */
-
-    return <Greeting 
+ 
+                 return <Greeting 
 
       customText = {this.props.customText}
+      startQuiz = {this.startQuiz}
  />
   }
 }

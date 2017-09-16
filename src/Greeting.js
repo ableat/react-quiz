@@ -1,11 +1,19 @@
-import React from 'react'
+import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 import Question from './Question'
 import ProgressBar from './ProgressBar'
 import classNames from 'classnames'
 import interpolate from 'interpolate'
 
-const Greeting = ({ customText = []}) => {
+//const Greeting = ({ customText = []}, startQuiz={}) => {
+  class Greeting extends Component {
 
+render(){
+
+  const {
+    customText,
+    startQuiz
+} = this.props
 
   return (
 
@@ -23,13 +31,22 @@ const Greeting = ({ customText = []}) => {
 
 
 
+
+
+   
+    <div>
+      <button 
+        onClick={() => startQuiz('start')}
+        disabled={false}>Start</button>
+    </div>
     </div>
   )
 }
-
+  }
 Greeting.propTypes = {
 
   customText: React.PropTypes.array,
+  startQuiz: React.PropTypes.func.isRequired,
 
 }
 

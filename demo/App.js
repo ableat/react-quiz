@@ -30,7 +30,8 @@ export default class App extends Component {
       <div className="App">
         <QuizContainer customClassNames={customClassNames}
                        questions={questions}
-                       onFinish={(answers) => console.log(answers)} />
+                       onFinish={(answers) => console.log(answers)} 
+                   /*    onStart={(start) => console.log(start)}*/ />
       </div>
     )
   }
