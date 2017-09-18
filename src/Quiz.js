@@ -5,7 +5,7 @@ import classNames from 'classnames'
 import interpolate from 'interpolate'
 
 const Quiz = ({ questions, answers, responseView, selectedanswer, currentQuestionIndex, onAnswer, onNext, 
-  onFinish, customClassNames = {}, customText = ''}) => {
+  onFinish, startQuizOver, customClassNames = {}, customText = ''}) => {
   const isLastQuestion = (currentQuestionIndex + 1) === questions.length
 
   const progressTextClassName = classNames('rq-Quiz-progressText', customClassNames['rq-Quiz-progressText'])
@@ -18,6 +18,10 @@ const Quiz = ({ questions, answers, responseView, selectedanswer, currentQuestio
     n: currentQuestionIndex + 1,
     total: questions.length
   })
+
+console.log(currentQuestionIndex)
+
+if (currentQuestionIndex === 0) {setTimeout(function(){ startQuizOver() }, 20000)}
 
   return (
 
@@ -68,6 +72,7 @@ Quiz.propTypes = {
   onAnswer: React.PropTypes.func.isRequired,
   onNext: React.PropTypes.func.isRequired,
   onFinish: React.PropTypes.func.isRequired,
+  startQuizOver: React.PropTypes.func.isRequired,
   progressTextTemplate: React.PropTypes.string
 }
 

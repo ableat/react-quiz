@@ -12,14 +12,21 @@ render(){
 
   const {
     customText,
-    startQuiz
+    showFirstContent,
+    startQuiz,
+    startQuizOver
 } = this.props
+
+ 
 
   return (
 
 
     <div className='custom-info'>
-
+        {showFirstContent
+        
+        ?
+        <div>
          <p className='custom-text-left'>Welcome to, <br/></p>
 
 
@@ -28,17 +35,32 @@ render(){
         <p className='custom-text-left'>We will ask you 5 questions and if you complete all of the questions, you will qualify to enter  in a drawing to win a $100 Amazon gift card <br/> </p>
 
         <p className='custom-text-right'>Good Luck!</p>
+      
 
-
-
-
-
-   
-    <div>
       <button 
         onClick={() => startQuiz('start')}
         disabled={false}>Start</button>
     </div>
+          :
+          <div>
+
+ 
+          <p className='custom-text-left'>Thank you for playing our game! <br/></p>
+
+        <p className='custom-text-left'>In order to enter the Amazon card drawing, please write "Able means Technology" on the back of your business card and place it on our drawing box <br/> </p>
+
+      
+        
+      <button 
+        onClick={() => startQuizOver('start')}
+        disabled={false}>Restart</button>
+    </div>
+        }
+
+
+
+   
+
     </div>
   )
 }
@@ -46,7 +68,9 @@ render(){
 Greeting.propTypes = {
 
   customText: React.PropTypes.array,
+  showFirstContent: React.PropTypes.boolean,
   startQuiz: React.PropTypes.func.isRequired,
+  startQuizOver: React.PropTypes.func.isRequired,
 
 }
 
