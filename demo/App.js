@@ -6,7 +6,7 @@ import questions from './questions'
 // classes to elements. The className will be appended to the existing one.
 // (Alternatively you can select on these selectors in your CSS to add styling.)
 const customClassNames = {
-  'rq-Quiz-buttonContainer': '',
+  'rq-Quiz-buttonContainer': 'buttonContainerClassName nextButtonClassName',
   'rq-Quiz-progressText': 'progressTextClassName',
   'rq-Question-instruction': 'instruction',
   'rq-Question-text': 'question-box',

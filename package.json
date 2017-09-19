@@ -47,7 +47,8 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "interpolate": "^0.1.0"
+    "interpolate": "^0.1.0",
+    "react-countdown-clock": "^2.0.0"
   },
   "ava": {
     "babel": "inherit",

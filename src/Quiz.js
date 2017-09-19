@@ -3,6 +3,7 @@ import Question from './Question'
 import ProgressBar from './ProgressBar'
 import classNames from 'classnames'
 import interpolate from 'interpolate'
+import ReactCountdownClock from 'react-countdown-clock'
 
 const Quiz = ({ questions, answers, responseView, selectedanswer, currentQuestionIndex, onAnswer, onNext, 
   onFinish, startQuizOver, customClassNames = {}, customText = ''}) => {
@@ -21,13 +22,23 @@ const Quiz = ({ questions, answers, responseView, selectedanswer, currentQuestio
 
 console.log(currentQuestionIndex)
 
-if (currentQuestionIndex === 0) {setTimeout(function(){ startQuizOver() }, 20000)}
+if (currentQuestionIndex === 0) {setTimeout(function(){ startQuizOver() }, 30000)}
 
   return (
 
 
 
     <div>
+
+      <div id='timer'>
+        <ReactCountdownClock seconds={30}
+                     color="#0DA4E6"
+                     alpha={0.9}
+                     showMilliseconds={false}
+                     size={200}
+          />
+</div>
+<div  id='questionAnswerSection'>
       <p className={progressTextClassName}>'{progressText}'</p>
       <ProgressBar value={currentQuestionIndex + 1}
                    max={questions.length}
@@ -36,17 +47,13 @@ if (currentQuestionIndex === 0) {setTimeout(function(){ startQuizOver() }, 20000
                 onAnswer={onAnswer}
                 selectedAnswer={answers[currentQuestionIndex]}
                 {...questions[currentQuestionIndex]} />
-
-
-
         {responseView 
-            ? <p className={progressTextClassName}>{questions[currentQuestionIndex].response[selectedanswer]}</p>
+            ? <p id='response-box' p>{questions[currentQuestionIndex].response[selectedanswer]}</p>
 
             :
             null
         }
-
-
+</div>
 
       <div className={buttonContainerClassName}>
         {isLastQuestion

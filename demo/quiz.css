@@ -20,6 +20,20 @@ body {
 	font-size: 1.5em;
 }
 
+#response-box {
+  background: #0DA4E6;
+  border-color : yellow;
+  border-width: 3px;
+  border-style: solid;
+  color : white;
+  text-align: center;
+  width: 960px;
+  margin-top: 50%;
+	margin: 0 auto;
+	padding: 10px;
+	font-size: 1.5em;
+}
+
 .custom-info {
   background: #0DA4E6;
   border-color : yellow;
@@ -31,6 +45,15 @@ body {
 	margin: 0 auto;
 	padding: 10px;
 	font-size: 1.5em;
+}
+
+.buttonContainerClassName {
+
+  position: absolute;
+  top: 700px;
+  right: 0;
+  background-color: #333;
+
 }
 
 .custom-text-left {
@@ -57,26 +80,46 @@ body {
 	font-size: 1.5em;
 }
 
+#timer {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  width: 200px;
+  height: 200px;
+}
+
+#questionAnswerSection {
+  position: absolute;
+  top: 210px;
+
+}
+
 .active {
   background-color: #333;
 }
 
 .answer-list {
+
   list-style: none;
   margin: 20px 0;
 }
 
 .answer {
+
   margin: 0;
   padding: 0;
 }
 
 .answer-button:focus {
+
+
+
   background-color: #333;
 }
 
 .instruction {
   font-weight: 600;
+  left: 0;
 }
 
 .instruction {
