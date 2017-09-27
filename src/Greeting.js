@@ -51,9 +51,6 @@ render(){
 
       
         
-      <button 
-        onClick={() => startQuizOver('start')}
-        disabled={false}>Restart</button>
     </div>
         }
 

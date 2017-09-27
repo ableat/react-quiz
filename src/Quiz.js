@@ -22,7 +22,8 @@ const Quiz = ({ questions, answers, responseView, selectedanswer, currentQuestio
 
 console.log(currentQuestionIndex)
 
-if (currentQuestionIndex === 0) {setTimeout(function(){ startQuizOver() }, 30000)}
+if (currentQuestionIndex === 0 && selectedanswer === -1)   { setTimeout(function(){ startQuizOver() }, 30000)
+  selectedanswer =0}
 
   return (
 

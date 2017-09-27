@@ -8,11 +8,12 @@ const Answer = ({ active, onClick, children, customClassNames = {} }) => {
     { 'rq-Answer-button--active': active,
       [customClassNames['rq-Answer-button--active']]: active
     })
-
+ //console.log(children[0])
+ console.log(children[1])
   return (
     <li className={answerClassName}>
       <button onClick={onClick}
-              className={answerButtonClassName}>{children}</button>
+              className={answerButtonClassName}><span className={"circle" + children.slice(0, 1)}>{children[0]} </span>&nbsp;  {children.substring(1)}</button>
     </li>
   )
 }

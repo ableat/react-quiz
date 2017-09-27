@@ -15,7 +15,7 @@ class QuizContainer extends React.Component {
     responseView: false,
     startQuizSW: false,
     showFirstContent: true,
-    selectedanswer: 0
+    selectedanswer: -1
   }
 
   onAnswer = (selectedAnswer) => {
@@ -48,7 +48,7 @@ class QuizContainer extends React.Component {
     responseView: false,
     startQuizSW: false,
     showFirstContent: true,
-    selectedanswer: 0
+    selectedanswer: -1
   })
 
   onFinish = () => this.setState({
