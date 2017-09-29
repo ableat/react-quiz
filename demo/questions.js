@@ -63,7 +63,7 @@ const questions = [
     funfact: 'Gilbarco TS-1000, NCR Radiant, ANDI (Nexgen, AGES), Retalix, Dresser Wyne 1.06, Verifone, and Gilbarco Pam1000',
     response: [
       'It is true, AAT Live has you covered, with our solution, you can monitor your equipment and ensure it is up and running!',
-      'Yes,  our solution now provides you with the ability to monitor you equipment and ensure it is up and running from wherever you are!'
+      'Yes,  our solution now provides you with the ability to monitor your equipment and ensure it is up and running from wherever you are!'
     ],
     answers: [
       'A False',

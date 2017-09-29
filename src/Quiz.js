@@ -5,7 +5,7 @@ import classNames from 'classnames'
 import interpolate from 'interpolate'
 import ReactCountdownClock from 'react-countdown-clock'
 
-const Quiz = ({ questions, answers, responseView, selectedanswer, currentQuestionIndex, onAnswer, onNext, 
+const Quiz = ({ questions, answers, responseView, selectedanswer, currentQuestionIndex, onAnswer, onNext,   buttonStatus,
   onFinish, startQuizOver, customClassNames = {}, customText = ''}) => {
   const isLastQuestion = (currentQuestionIndex + 1) === questions.length
 
@@ -22,23 +22,23 @@ const Quiz = ({ questions, answers, responseView, selectedanswer, currentQuestio
 
 console.log(currentQuestionIndex)
 
-if (currentQuestionIndex === 0 && selectedanswer === -1)   { setTimeout(function(){ startQuizOver() }, 30000)
+if (currentQuestionIndex === 0 && selectedanswer === -1)   { setTimeout(function(){ startQuizOver() }, 60000)
   selectedanswer =0}
-
+console.log(Quiz.propTypes)
   return (
 
 
 
     <div>
 
-      <div id='timer'>
-        <ReactCountdownClock seconds={30}
+{ /*     <div id='timer'>
+        <ReactCountdownClock seconds={60}
                      color="#0DA4E6"
                      alpha={0.9}
                      showMilliseconds={false}
-                     size={200}
+                     size={50}
           />
-</div>
+</div>*/}
 <div  id='questionAnswerSection'>
       <p className={progressTextClassName}>'{progressText}'</p>
       <ProgressBar value={currentQuestionIndex + 1}
@@ -46,6 +46,8 @@ if (currentQuestionIndex === 0 && selectedanswer === -1)   { setTimeout(function
                    customClassNames={customClassNames} />
       <Question customClassNames={customClassNames}
                 onAnswer={onAnswer}
+                onNext={onNext}
+                buttonStatus = {buttonStatus }
                 selectedAnswer={answers[currentQuestionIndex]}
                 {...questions[currentQuestionIndex]} />
         {responseView 
@@ -56,7 +58,7 @@ if (currentQuestionIndex === 0 && selectedanswer === -1)   { setTimeout(function
         }
 </div>
 
-      <div className={buttonContainerClassName}>
+{ /*     <div className={buttonContainerClassName}>
         {isLastQuestion
           ? <button className={nextButtonClassName}
                     onClick={() => onFinish(answers)}
@@ -65,7 +67,7 @@ if (currentQuestionIndex === 0 && selectedanswer === -1)   { setTimeout(function
                     onClick={onNext}
                     disabled={answers[currentQuestionIndex] === undefined}>{nextButtonText}</button>
         }
-      </div>
+      </div>*/}
     </div>
   )
 }
@@ -81,6 +83,7 @@ Quiz.propTypes = {
   onNext: React.PropTypes.func.isRequired,
   onFinish: React.PropTypes.func.isRequired,
   startQuizOver: React.PropTypes.func.isRequired,
+  buttonStatus: React.PropTypes.boolean,
   progressTextTemplate: React.PropTypes.string
 }
 

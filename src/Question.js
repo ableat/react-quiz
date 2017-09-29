@@ -2,7 +2,7 @@ import React from 'react'
 import Answer from './Answer'
 import classNames from 'classnames'
 
-const Question = ({ instruction, text, answers, selectedAnswer, onAnswer,
+const Question = ({ instruction, text, answers, selectedAnswer, onAnswer, onNext, buttonStatus,
   customClassNames = {} }) => {
   const instructionClassName = classNames('rq-Question-instruction', customClassNames['rq-Question-instruction'])
   const textClassName = classNames('rq-Question-text', customClassNames['rq-Question-text'])
@@ -25,7 +25,9 @@ const Question = ({ instruction, text, answers, selectedAnswer, onAnswer,
           <Answer customClassNames={customClassNames}
                   key={i}
                   active={i === selectedAnswer}
-                  onClick={() => onAnswer(i)}>{a}</Answer>
+                  buttonStatus = {buttonStatus }
+                  onNext={onNext}
+                  onAnswer={() => onAnswer(i)}>{a}</Answer>
         ))}
       </ol>
     </div>
@@ -40,7 +42,9 @@ Question.propTypes = {
   ]).isRequired,
   answers: React.PropTypes.array.isRequired,
   selectedAnswer: React.PropTypes.number,
-  onAnswer: React.PropTypes.func
+  onNext: React.PropTypes.func,
+  onAnswer: React.PropTypes.func,
+  buttonStatus: React.PropTypes.boolean
 }
 
 export default Question
