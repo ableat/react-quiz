@@ -47,7 +47,7 @@ render(){
  
           <p className='custom-text-left'>Thank you for playing our game! <br/></p>
 
-        <p className='custom-text-left'>In order to enter the Amazon card drawing, please write "Able means Technology" on the back of your business card and place it on our drawing box <br/> </p>
+        <p className='custom-text-left'>In order to enter the Amazon card drawing, please write "Technology" on the back of your business card and place it in our drawing box <br/> </p>
 
       
         

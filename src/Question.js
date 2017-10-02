@@ -18,6 +18,7 @@ const Question = ({ instruction, text, answers, selectedAnswer, onAnswer, onNext
 
   return (
     <div>
+      <img src="/demo/IMG_2983 2.JPG" alt="Smiley face" height="142" width="142"/>
       <p className={instructionClassName}>{instruction}</p>
       {renderText()}
       <ol className={answerListClassName}>
